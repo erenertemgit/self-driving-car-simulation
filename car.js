@@ -5,8 +5,21 @@ class Car{
         this.width = width;
         this.height = height;
 
-        this.img = new Image();
-        this.img.src = "resources/30x50xcar.png"
+
+        //car image
+        //this.img = new Image();
+        //this.img.src = "resources/30x50xcar.png"
+
+        this.controls = new Controls();
+    }
+
+    update(){
+        if(this.controls.forward){
+            this.y -= 2;
+        }
+        if(this.controls.reverse){
+            this.y += 2;
+        }
     }
     
     draw(ctx){
@@ -17,6 +30,7 @@ class Car{
             this.width,
             this.height
         );
+
 
         ctx.fill();
     }
